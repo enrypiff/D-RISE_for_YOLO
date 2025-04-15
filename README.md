@@ -8,6 +8,10 @@ In essence, D-RISE works by randomly masking the input images and isolating the 
 
 The code is setup to work for both CPU and GPU.
 
+### This is an example of the result
+![000000000139_chair_1](https://github.com/user-attachments/assets/a21dd8b5-1c11-4ea0-ac21-4a9fa48053a5)
+
+
 #### Optional (just for GPUs)
 If you have a GPU first you need to have CUDA installed
 You can execute the following code to install it
