@@ -8,10 +8,6 @@ In essence, D-RISE works by randomly masking the input images and isolating the 
 
 The code is setup to work for both CPU and GPU.
 
-### This is an example of the result
-![000000000139_chair_1](https://github.com/user-attachments/assets/a21dd8b5-1c11-4ea0-ac21-4a9fa48053a5)
-
-
 #### Optional (just for GPUs)
 If you have a GPU first you need to have CUDA installed
 You can execute the following code to install it
@@ -40,15 +36,38 @@ myenv/bin/python main.py --images_folder_path <IMG FOLDER PATH> --model_path <MO
 
 There are others optional parameters:
 
-- `conf_threshold` (float): Confidence threshold for displaying detections. (default: 0.5)
+- `conf_threshold` (float): Confidence threshold for displaying detections. (default: 0.3)
 
 - `img_size` (int): Size to resize images for the model. (default: 640)
 
 - `masks_num` (int): Number of masks to generate for D-RISE. More is slower but gives higher quality mask. (default: 500)
 
-- `mask_res` (int): Resolution of the base mask. High resolutions will give finer masks, but more need to be run. (default: 8)
+- `mask_res` (int): Resolution of the base mask. High resolutions will give finer masks, but more need to be run. (default: 16)
 
 - `mask_padding` (int): Padding for the mask. (default: None)
+
+- `save_masks` (bool): Whether to save generated masks. (default: False)
+
+- `save_masked_images` (bool): Whether to save images with masks applied. (default: False)
+
+- `save_predictions` (bool): Whether to save prediction results on masked images. (default: False)
+
+- `save_individual_saliency` (bool): Whether to save individual saliency maps. (default: False)
+
+- `debug_sample_count` (int): Number of debug samples to save. (default: 45)
+
+- `deterministic_generation` (bool): Whether to use deterministic generation. (default: False)
+
+- `resolution_decrease_factor` (float): Factor to decrease resolution by if flat saliency maps are detected. (default: 0.5)
+
+- `max_resolution_attempts` (int): Maximum number of attempts to find a suitable mask resolution. (default: 3)
+
+- `mark_high_intensity` (bool): Whether to mark high intensity areas in the saliency maps. (default: False)
+
+- `mark_high_intensity_threshold_mid` (float): Threshold for mid intensity. (default: 0.8)
+
+- `mark_high_intensity_threshold_high` (float): Threshold for high intensity. (default: 0.9)
+
 
 To execute the script with any of the previously described parameters just run the following command adding the optional parameter.
 
